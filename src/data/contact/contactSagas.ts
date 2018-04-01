@@ -1,3 +1,4 @@
+import { AxiosResponse } from 'axios';
 import { effects, SagaIterator } from 'redux-saga';
 import {
   createActionCreator,
@@ -7,10 +8,9 @@ import {
   SUCCESS_TYPE,
 } from '../../common/Redux';
 import { actionTypes } from './contactConstants';
+import { getContacts } from './contactService';
 
-// import { getContacts } from './contactService';
-
-function* loadApiContacts() {
+function* loadApiContacts(): SagaIterator {
   yield effects.put(
     createActionCreator(
       createActionType(actionTypes.GET_CONTACTS, LOADING_TYPE),
@@ -18,15 +18,15 @@ function* loadApiContacts() {
   );
 
   try {
-    // const contacts: Contacts = yield effects.call(getContacts());
-    const contacts: any[] = [];
-    if (!Array.isArray(contacts)) {
+    const contacts: AxiosResponse<Contacts> = yield effects.call(getContacts);
+
+    if (!Array.isArray(contacts.data)) {
       throw new Error('Not a valid response!');
     }
     yield effects.put(
       createActionCreator(
         createActionType(actionTypes.GET_CONTACTS, SUCCESS_TYPE),
-        contacts,
+        contacts.data,
       ),
     );
   } catch (e) {
@@ -39,6 +39,6 @@ function* loadApiContacts() {
   }
 }
 
-export function* loadContacts(): SagaIterator {
+export function* loadContactsSaga(): SagaIterator {
   yield effects.takeLatest(actionTypes.GET_CONTACTS, loadApiContacts);
 }

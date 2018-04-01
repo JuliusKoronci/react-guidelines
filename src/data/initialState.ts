@@ -1,5 +1,5 @@
 export default {
-  contacts: [],
+  'data.contact': [],
   routing: {
     location: null,
   },
