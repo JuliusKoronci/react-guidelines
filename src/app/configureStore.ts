@@ -2,16 +2,19 @@ import { createBrowserHistory } from 'history';
 import { routerMiddleware } from 'react-router-redux';
 import { applyMiddleware, compose, createStore } from 'redux';
 import logger from 'redux-logger';
+import createSagaMiddleware from 'redux-saga';
 import { StoreState } from '../@types/state';
 import DevTools from '../common/DevTools';
 import { isProd } from '../common/Process';
 import rootReducer from './rootReducer';
 
 export const history = createBrowserHistory();
+// create the saga middleware
+export const sagaMiddleware = createSagaMiddleware();
 
 function configureStoreProd(initialState: StoreState) {
   const reactRouterMiddleware = routerMiddleware(history);
-  const middleWares = [reactRouterMiddleware];
+  const middleWares = [reactRouterMiddleware, sagaMiddleware];
 
   return createStore(
     rootReducer,
@@ -22,7 +25,7 @@ function configureStoreProd(initialState: StoreState) {
 
 function configureStoreDev(initialState: StoreState) {
   const reactRouterMiddleware = routerMiddleware(history);
-  const middleWares = [logger, reactRouterMiddleware];
+  const middleWares = [logger, reactRouterMiddleware, sagaMiddleware];
 
   const store = createStore(
     rootReducer,
