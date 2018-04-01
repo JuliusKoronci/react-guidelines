@@ -19,7 +19,7 @@ export const createActionType = (
   type: AvailableTypes,
 ): string => `${action}${type}`;
 
-export const createActionCreator = (type: string, payload: any) => ({
+export const createActionCreator = (type: string, payload?: any) => ({
   payload,
   type,
 });
