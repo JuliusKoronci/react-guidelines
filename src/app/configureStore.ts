@@ -3,8 +3,8 @@ import { routerMiddleware } from 'react-router-redux';
 import { applyMiddleware, compose, createStore } from 'redux';
 import logger from 'redux-logger';
 import { StoreState } from '../@types/state';
-import DevTools from '../tools/DevTools';
-import { isProd } from '../tools/Process';
+import DevTools from '../common/DevTools';
+import { isProd } from '../common/Process';
 import rootReducer from './rootReducer';
 
 export const history = createBrowserHistory();
