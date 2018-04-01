@@ -1,9 +1,9 @@
 import * as React from 'react';
 
 import * as devTools from 'redux-devtools';
+import DockMonitor from 'redux-devtools-dock-monitor';
 
 import LogMonitor from 'redux-devtools-log-monitor';
-import DockMonitor from 'redux-devtools-dock-monitor';
 
 const DevTools = devTools.createDevTools(
   <DockMonitor
@@ -11,8 +11,8 @@ const DevTools = devTools.createDevTools(
     changePositionKey="ctrl-q"
     defaultIsVisible={true}
   >
-    <LogMonitor theme="tomorrow"/>
-  </DockMonitor>,
+    <LogMonitor theme="tomorrow" />
+  </DockMonitor>
 );
 
 export default DevTools;

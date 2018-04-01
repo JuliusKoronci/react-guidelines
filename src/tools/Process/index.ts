@@ -1,5 +1,3 @@
 import { isProd } from './env';
 
-export {
-  isProd,
-};
+export { isProd };

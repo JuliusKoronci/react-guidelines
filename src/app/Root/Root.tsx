@@ -5,7 +5,6 @@ import DevTools from '../../tools/DevTools';
 
 import { isProd } from '../../tools/Process';
 
-
 export interface IRootProps {
   store: Store<{}>;
 }

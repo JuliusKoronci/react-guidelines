@@ -11,33 +11,31 @@ export const history = createBrowserHistory();
 
 function configureStoreProd(initialState: StoreState) {
   const reactRouterMiddleware = routerMiddleware(history);
-  const middleWares = [
-    reactRouterMiddleware,
-  ];
-  
-  return createStore(rootReducer, initialState, compose(
-    applyMiddleware(...middleWares),
-  ));
+  const middleWares = [reactRouterMiddleware];
+
+  return createStore(
+    rootReducer,
+    initialState,
+    compose(applyMiddleware(...middleWares))
+  );
 }
 
 function configureStoreDev(initialState: StoreState) {
   const reactRouterMiddleware = routerMiddleware(history);
-  const middleWares = [
-    logger,
-    reactRouterMiddleware,
-  ];
-  
-  const store = createStore(rootReducer, initialState, compose(
-    applyMiddleware(...middleWares),
-    DevTools.instrument(),
-  ));
-  
+  const middleWares = [logger, reactRouterMiddleware];
+
+  const store = createStore(
+    rootReducer,
+    initialState,
+    compose(applyMiddleware(...middleWares), DevTools.instrument())
+  );
+
   if (module.hot) {
     module.hot.accept('./rootReducer', () => {
       store.replaceReducer(rootReducer);
     });
   }
-  
+
   return store;
 }
 
