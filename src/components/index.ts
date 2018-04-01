@@ -1,4 +1,4 @@
-import { H1, Logo } from './atoms';
+import { H1, Loader, Logo } from './atoms';
 import { MainLayout } from './layouts';
 import { Header } from './templates';
 
@@ -12,4 +12,5 @@ export {
   // organisms
   // templates
   Header,
+  Loader,
 };

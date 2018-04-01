@@ -1,14 +1,18 @@
 import * as React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import routes from '../../app/routes';
 import { Header, MainLayout } from '../../components';
 import HomePage from '../Home';
+import NotFound from '../NotFound';
 
 const App = () => (
   <MainLayout
     content={
       <Router>
-        <Route path={routes.home} component={HomePage} />
+        <Switch>
+          <Route exact={true} path={routes.home} component={HomePage} />
+          <Route component={NotFound} />
+        </Switch>
       </Router>
     }
     header={<Header />}
