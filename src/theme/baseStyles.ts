@@ -1,5 +1,5 @@
-import { injectGlobal } from 'styled-components';
 import styledNormalize from 'styled-normalize';
+import { injectGlobal } from './theme';
 
 export default () => injectGlobal`
   ${styledNormalize}
@@ -7,5 +7,6 @@ export default () => injectGlobal`
   body {
     padding: 0;
     margin: 0;
+    font-family: sans-serif;
   }
 `;
