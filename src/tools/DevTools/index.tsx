@@ -12,7 +12,7 @@ const DevTools = devTools.createDevTools(
     defaultIsVisible={true}
   >
     <LogMonitor theme="tomorrow" />
-  </DockMonitor>
+  </DockMonitor>,
 );
 
 export default DevTools;

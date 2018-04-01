@@ -3,5 +3,5 @@ import typography from './typography';
 
 export default {
   colors,
-  typography
+  typography,
 };

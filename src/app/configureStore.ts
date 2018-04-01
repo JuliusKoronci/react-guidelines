@@ -16,7 +16,7 @@ function configureStoreProd(initialState: StoreState) {
   return createStore(
     rootReducer,
     initialState,
-    compose(applyMiddleware(...middleWares))
+    compose(applyMiddleware(...middleWares)),
   );
 }
 
@@ -27,7 +27,7 @@ function configureStoreDev(initialState: StoreState) {
   const store = createStore(
     rootReducer,
     initialState,
-    compose(applyMiddleware(...middleWares), DevTools.instrument())
+    compose(applyMiddleware(...middleWares), DevTools.instrument()),
   );
 
   if (module.hot) {

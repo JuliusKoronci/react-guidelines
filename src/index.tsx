@@ -13,7 +13,7 @@ ReactDOM.render(
   <Root store={store}>
     <Children />
   </Root>,
-  document.getElementById('root') as HTMLElement
+  document.getElementById('root') as HTMLElement,
 );
 
 if (module.hot) {
@@ -22,7 +22,7 @@ if (module.hot) {
       <Root store={store}>
         <Children />
       </Root>,
-      document.getElementById('root') as HTMLElement
+      document.getElementById('root') as HTMLElement,
     );
   });
 }

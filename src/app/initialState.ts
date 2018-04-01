@@ -1,5 +1,5 @@
 export default {
   routing: {
-    location: null
-  }
+    location: null,
+  },
 };
