@@ -1,10 +1,5 @@
-import * as Loadable from 'react-loadable';
-import { Loader } from '../../components';
+import loadable from 'loadable-components';
 
-const HomePage = Loadable({
-  delay: 1000,
-  loader: () => import('./Home'),
-  loading: Loader,
-});
+const HomePage = loadable(() => import('./Home'));
 
 export default HomePage;
