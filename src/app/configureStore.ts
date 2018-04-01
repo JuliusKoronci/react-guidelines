@@ -1,13 +1,13 @@
-import { createStore, compose, applyMiddleware } from 'redux';
-import createHistory from 'history/createBrowserHistory';
+import { createBrowserHistory } from 'history';
 import { routerMiddleware } from 'react-router-redux';
+import { applyMiddleware, compose, createStore } from 'redux';
 import logger from 'redux-logger';
 import { StoreState } from '../@types/state';
 import DevTools from '../tools/DevTools';
 import { isProd } from '../tools/Process';
 import rootReducer from './rootReducer';
 
-export const history = createHistory();
+export const history = createBrowserHistory();
 
 function configureStoreProd(initialState: StoreState) {
   const reactRouterMiddleware = routerMiddleware(history);

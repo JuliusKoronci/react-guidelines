@@ -6,7 +6,10 @@
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
+    "eject": "react-scripts-ts eject",
+    "tslint-check": "tslint-config-prettier-check ./tslint.json",
+    "doc:dev": "npx styleguidist server",
+    "doc:prod": "npx styleguidist build"
   },
   "dependencies": {
     "history": "^4.7.2",
@@ -21,8 +24,11 @@
     "react-router-redux": "^4.0.8",
     "react-scripts-ts": "2.14.0",
     "redux": "^3.7.2",
-    "redux-devtools": "^3.4.1",
     "reselect": "^3.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-devtools": "^3.4.1",
+    "redux-devtools-dock-monitor": "^1.1.3",
+    "redux-devtools-log-monitor": "^1.4.0",
     "styled-components": "^3.2.5"
   },
   "devDependencies": {
@@ -45,11 +51,12 @@
     "@types/redux-logger": "^3.0.5",
     "@types/webpack-env": "^1.13.5",
     "ajv": "^6.4.0",
+    "babel-plugin-styled-components": "^1.5.1",
     "enzyme": "^3.3.0",
     "jest": "^22.4.3",
-    "redux-devtools-dock-monitor": "^1.1.3",
-    "redux-devtools-log-monitor": "^1.4.0",
-    "redux-logger": "^3.0.6",
+    "react-docgen-typescript": "^1.2.6",
+    "react-styleguidist": "^7.0.1",
+    "tslint-config-prettier": "^1.10.0",
     "typescript": "^2.8.1"
   }
 }

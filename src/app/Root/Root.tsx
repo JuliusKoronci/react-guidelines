@@ -1,18 +1,17 @@
 import * as React from 'react';
 import { Provider } from 'react-redux';
 import { Store } from 'redux';
-
-import { isProd } from '../../tools/Process';
 import DevTools from '../../tools/DevTools';
 
-export interface RootProps {
+import { isProd } from '../../tools/Process';
+
+
+export interface IRootProps {
   store: Store<{}>;
 }
 
-type State = {};
-
-export default class Root extends React.Component<RootProps, State> {
-  render() {
+export default class Root extends React.Component<IRootProps, {}> {
+  public render() {
     return (
       <Provider store={this.props.store}>
         <div>
