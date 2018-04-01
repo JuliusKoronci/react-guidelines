@@ -1,0 +1,1 @@
+exports.apiError = (res, message, status) => res.status(status).json({ message });

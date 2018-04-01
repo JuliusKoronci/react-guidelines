@@ -1,5 +1,6 @@
 import { RouterState } from 'react-router-redux';
 
-export interface StoreState {
+export interface IStoreState {
+  'data.contact': Contacts;
   router: RouterState;
 }

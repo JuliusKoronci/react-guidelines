@@ -1,9 +1,11 @@
 import { routerReducer } from 'react-router-redux';
 import { combineReducers } from 'redux';
-import { StoreState } from '../@types/state';
+import { IStoreState } from '../@types/state';
+import { contactReducer, contactReducerName } from '../data/contact';
 
-const rootReducer = combineReducers<StoreState>({
+const rootReducer = combineReducers<IStoreState>({
   routing: routerReducer,
+  [contactReducerName]: contactReducer,
 });
 
 export default rootReducer;

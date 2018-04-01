@@ -14,7 +14,7 @@
       true,
       {
         "import-sources-order": "any",
-        "named-imports-order": "case-insensitive"
+        "named-imports-order": "lowercase-first"
       }
     ]
   }
