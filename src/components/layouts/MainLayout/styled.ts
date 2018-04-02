@@ -17,6 +17,9 @@ export const Header = styled.header`
 export const Content = styled.div`
   font-size: large;
   padding: 10px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
 `;
 
 /** @component */

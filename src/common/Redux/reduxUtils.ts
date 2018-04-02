@@ -17,7 +17,7 @@ const createReducer = <T>(
     if (handlers.hasOwnProperty(action.type)) {
       // tslint:disable:prefer-object-spread typescript can't predict object
       // with spread here
-      return Object.assign({}, state, handlers[action.type](state, action));
+      return handlers[action.type](state, action);
     }
 
     return state;

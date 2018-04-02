@@ -1,10 +1,13 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { Action, bindActionCreators } from 'redux';
-import { contactActions } from '../../../data/contact';
+import { Action, bindActionCreators, Dispatch } from 'redux';
+import { IStoreState } from '../../../@types/state';
+import ContactTable from '../../../components/templates/ContactTable/ContactTable';
+import { contactActions, selectContactData } from '../../../data/contact';
 
 export interface IProps {
   loadContacts: () => Action;
+  contactData: Contacts;
 }
 
 export class ContactListContainer extends React.PureComponent<IProps, {}> {
@@ -13,15 +16,22 @@ export class ContactListContainer extends React.PureComponent<IProps, {}> {
   }
 
   public render() {
-    return <div>Test api request</div>;
+    return <ContactTable contacts={this.props.contactData} />;
   }
 }
 
-export default connect(null, dispatch =>
+const mapDispatchToProps = (dispatch: Dispatch<IStoreState>) =>
   bindActionCreators(
     {
       ...contactActions,
     },
     dispatch,
-  ),
-)(ContactListContainer);
+  );
+
+const mapStateToProps = (state: IStoreState) => ({
+  contactData: selectContactData(state),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(
+  ContactListContainer,
+);

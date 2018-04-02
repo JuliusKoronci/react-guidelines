@@ -1,6 +1,6 @@
 import { H1, Loader, Logo } from './atoms';
 import { MainLayout } from './layouts';
-import { Header } from './templates';
+import { ContactDetail, ContactTable, Header } from './templates';
 
 export {
   // Layouts
@@ -11,6 +11,8 @@ export {
   // molecules
   // organisms
   // templates
+  ContactDetail,
+  ContactTable,
   Header,
   Loader,
 };

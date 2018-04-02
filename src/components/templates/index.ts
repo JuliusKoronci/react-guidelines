@@ -1,3 +1,5 @@
 import Header from './Header';
+import ContactTable from './ContactTable';
+import ContactDetail from './ContactDetail';
 
-export { Header };
+export { ContactTable, Header, ContactDetail };
