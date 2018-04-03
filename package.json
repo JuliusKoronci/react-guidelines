@@ -95,6 +95,7 @@
     "collectCoverageFrom": [
       "src/**/*.{ts, tsx}",
       "!src/**/index.ts",
+      "!src/**/styled.ts",
       "!src/app/configureStore.ts",
       "!src/app/rootReducer.ts",
       "!src/registerServiceWorker.ts",
