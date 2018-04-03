@@ -1,9 +1,16 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import { H1, Logo } from '../..';
 
-const Header = () => (
+export interface IProps {
+  pathToHome?: string;
+}
+
+const Header = ({ pathToHome = '/' }: IProps) => (
   <div>
-    <Logo />
+    <Link to={pathToHome}>
+      <Logo />
+    </Link>
     <H1>Welcome to React</H1>
   </div>
 );

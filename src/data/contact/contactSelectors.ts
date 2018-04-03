@@ -17,9 +17,6 @@ export const selectContactData: ContactsSelectorType = createSelector(
 );
 
 export const selectSingleContact: ContactSelectorType = (contactId: string) =>
-  createSelector(contactDataState, (contacts: Contacts) => {
-    console.log(contacts, contactId);
-    return contacts.find((contact: IContact) => {
-      return `${contact.id}` === contactId;
-    });
-  });
+  createSelector(contactDataState, (contacts: Contacts) =>
+    contacts.find((contact: IContact) => `${contact.id}` === contactId),
+  );
