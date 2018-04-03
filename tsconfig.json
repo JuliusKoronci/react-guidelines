@@ -23,12 +23,14 @@
   },
   "exclude": [
     "node_modules",
+    "coverage",
     "build",
     "scripts",
     "acceptance-tests",
     "webpack",
     "jest",
     "server",
-    "src/setupTests.ts"
+    "src/setupTests.ts",
+    "src/**/__tests__"
   ]
 }

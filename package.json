@@ -95,6 +95,8 @@
     "collectCoverageFrom": [
       "src/**/*.{ts, tsx}",
       "!src/**/index.ts",
+      "!src/app/configureStore.ts",
+      "!src/app/rootReducer.ts",
       "!src/registerServiceWorker.ts",
       "!src/setupTests.ts",
       "!<rootDir>/node_modules/",
