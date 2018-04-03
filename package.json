@@ -93,8 +93,9 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/**/*.{ts, tsx}",
+      "src/**/*.{ts,tsx}",
       "!src/**/index.ts",
+      "!src/index.tsx",
       "!src/**/styled.ts",
       "!src/app/configureStore.ts",
       "!src/app/rootReducer.ts",

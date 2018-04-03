@@ -14,7 +14,7 @@ export const Header = styled.header`
 `;
 
 /** @component */
-export const Content = styled.div`
+export const Content = styled.section`
   font-size: large;
   padding: 10px;
   text-align: center;
@@ -23,7 +23,7 @@ export const Content = styled.div`
 `;
 
 /** @component */
-export const Footer = styled.div`
+export const Footer = styled.footer`
   color: ${props => props.theme.colors.grey};
   padding: 10px;
 `;
